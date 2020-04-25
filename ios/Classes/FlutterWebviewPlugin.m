@@ -136,9 +136,10 @@ static NSString *const CHANNEL_NAME = @"flutter_webview_plugin";
     WKWebViewConfiguration* configuration = [[WKWebViewConfiguration alloc] init];
     configuration.userContentController = userContentController;
     configuration.allowsInlineMediaPlayback = true;
-    configuration.allowsBackForwardNavigationGestures = true;
+    
     self.webview = [[WKWebView alloc] initWithFrame:rc configuration:configuration];
     self.webview.UIDelegate = self;
+    self.webview.allowsBackForwardNavigationGestures = true;
     self.webview.navigationDelegate = self;
     self.webview.scrollView.delegate = self;
     self.webview.hidden = [hidden boolValue];
